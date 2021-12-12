@@ -1,18 +1,16 @@
-const Home = () => {
-    const handleClick = (e) => {
-        console.log("Halloo");
-        console.log(e);
-    }
+import { useState } from "react";
 
-    const handleClick2 = (name,e) => {
-        console.log("Halloo", name);
-        console.log(e)
-    } 
+const Home = () => {
+    const [like,setLike] = useState(1);
+
+    const handleClick = () => {
+        setLike(like + 1)    
+    }
     return (
         <div className="home">
             <h3>Contact List</h3>
+            <h5>Like : {like}</h5>
             <button onClick={handleClick}>klik</button>
-            <button onClick={(e) => handleClick2("Luffi",e)}>Klick Lagi</button>
         </div>
     );
 }
